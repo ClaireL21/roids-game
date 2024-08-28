@@ -29,4 +29,23 @@ public class Bullet : MonoBehaviour
     {
         
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        Collider collider = collision.collider;
+        if (collider.CompareTag("Asteroid"))
+        {
+            Asteroid roid = collider.gameObject.GetComponent<Asteroid>();
+
+            // let the other object handle its own death throes
+            roid.Die();
+
+            // Destroy the Bullet which collided with the Asteroid
+            Destroy(gameObject);
+        } else
+        {
+            // if we collided with something else, print tag of other thing
+            Debug.Log("Collided with " + collider.tag);
+        }
+    }
 }
