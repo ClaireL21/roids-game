@@ -836,6 +836,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 42041509081857796, guid: 227ed0458071abf4d892f7dfda48c536, type: 3}
+      propertyPath: deathKnell
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e7f94e86ca905e41bc6fb1e25d5e1d4, type: 3}
     - target: {fileID: 3989337815422615988, guid: 227ed0458071abf4d892f7dfda48c536, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

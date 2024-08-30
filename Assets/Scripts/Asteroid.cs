@@ -6,6 +6,7 @@ public class Asteroid : MonoBehaviour
 {
     public GameObject deathExplosion;
     public int pointValue;
+    public AudioClip deathKnell;
 
     // Start is called before the first frame update
     void Start()
@@ -28,14 +29,12 @@ public class Asteroid : MonoBehaviour
         and XY being the horizontal plane. as a result, since we are looking down the Y axis, we rotate
         the particle system so that it flys in the right way.
         */
-
+        AudioSource.PlayClipAtPoint(deathKnell, gameObject.transform.position);
         Instantiate(deathExplosion, gameObject.transform.position,
             Quaternion.AngleAxis(-90, Vector3.right));
         GameObject obj = GameObject.Find("GlobalObject");
         Global g = obj.GetComponent<Global>();
         g.score += pointValue;
-        Debug.Log("g score = " + g.score);
-        Debug.Log("point = " + pointValue);
         Destroy(gameObject);
     }
 }
