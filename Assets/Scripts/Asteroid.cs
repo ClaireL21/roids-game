@@ -34,6 +34,8 @@ public class Asteroid : MonoBehaviour
         GameObject obj = GameObject.Find("GlobalObject");
         Global g = obj.GetComponent<Global>();
         g.score += pointValue;
+        Debug.Log("g score = " + g.score);
+        Debug.Log("point = " + pointValue);
         Destroy(gameObject);
     }
 }

@@ -1,18 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreUI : MonoBehaviour
 {
     Global globalObj;
-    Text scoreText;
+    TMP_Text scoreText;
     // Start is called before the first frame update
     void Start()
     {
         GameObject g = GameObject.Find("GlobalObject");
         globalObj = g.GetComponent<Global>();
-        scoreText = gameObject.GetComponent<Text>();
+        Debug.Log("globalObj = " + globalObj);
+        scoreText = gameObject.GetComponent<TMP_Text>();
+        Debug.Log("score text = " + scoreText);
     }
 
     // Update is called once per frame
